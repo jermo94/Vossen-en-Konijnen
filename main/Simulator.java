@@ -17,6 +17,7 @@ import model.Actor;
 import model.Animal;
 import model.Bear;
 import model.Fox;
+import model.Grass;
 import model.Hunter;
 import model.Rabbit;
 import model.Wolf;
@@ -45,6 +46,8 @@ public class Simulator
     private static double rabbit_creation_probability = 0.4;    
     // The probability that a hunter will be created in any given grid position.
     private static double hunter_creation_probability = 0.05;
+    
+    private static double grass_creation_probability = 0.020;
 
     
     //	animation speed of the thread
@@ -93,6 +96,7 @@ public class Simulator
         view.setColor(Bear.class, Color.CYAN);
         view.setColor(Hunter.class, Color.RED);
         view.setColor(Wolf.class, Color.GRAY);
+        view.setColor(Grass.class, Color.GREEN);
         // Setup a valid starting point.
         reset();
     }
@@ -199,6 +203,12 @@ public class Simulator
     {
     	if (hunter_creation_probability >= 0)
     		Simulator.hunter_creation_probability = hunter_creation_probability;
+    }
+    
+    public static void setGrassCreationProbability(double grass_creation_probability)
+    {
+    	if (grass_creation_probability >= 0)
+    		Simulator.grass_creation_probability = grass_creation_probability;
     }    
     
     /**
@@ -258,6 +268,7 @@ public class Simulator
         fox_creation_probability = 0.09;
         rabbit_creation_probability = 0.4;    
         hunter_creation_probability = 0.001;
+        grass_creation_probability = 0.020;
     }
     
     /**
@@ -293,6 +304,11 @@ public class Simulator
                     Location location = new Location(row, col);
                     Wolf wolf = new Wolf(true, field, location);
                     actors.add(wolf);
+                }
+                else if(rand.nextDouble() <= grass_creation_probability) {
+                    Location location = new Location(row, col);
+                    Grass grass = new Grass(field, location);
+                    actors.add(grass);
                 }
                 // else leave the location empty.
             }
