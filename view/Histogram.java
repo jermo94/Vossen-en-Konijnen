@@ -23,7 +23,7 @@ public class Histogram extends JPanel implements AbstractView
 	//	breedte van de histogram
 	private int width;
 	//	afstand tussen ieder balk
-	private final int SPACE = 40;
+	private final int SPACE = 0;
 	
 	/**
 	 * leeg constructor
@@ -73,7 +73,7 @@ public class Histogram extends JPanel implements AbstractView
 		}
 		else
 		{
-			width = 4;
+			width = 20;
 		}
 		
 		//	blok counter
@@ -83,7 +83,7 @@ public class Histogram extends JPanel implements AbstractView
 		for (Color color : stats.keySet())
 		{
 			//	bepaald de hoogte van de blok;
-			height = stats.get(color).getCount() / 5;
+			height = stats.get(color).getCount() / 6;
 			
 			//	kleurt de blok
 			g.setColor(color);

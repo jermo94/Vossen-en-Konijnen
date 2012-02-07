@@ -77,7 +77,7 @@ public class PieChart extends JPanel implements AbstractView
 		{
 			if (stats.get(color).getCount() > 0)
 			{
-				//	teller van een kleeur delen door de totaal en keer 360 graden
+				//	teller van een kleur delen door de totaal en keer 360 graden
 				arcAngle = (stats.get(color).getCount() * 360/ total) ;
 				g.setColor(color);
 				//	draw de piechart

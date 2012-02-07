@@ -17,7 +17,7 @@ public class FieldView extends JPanel {
 	
 	private static final long serialVersionUID = 4654472673504364932L;
 
-	private final int GRID_VIEW_SCALING_FACTOR = 6;
+	private final int GRID_VIEW_SCALING_FACTOR = 10;
 
 	private int gridWidth, gridHeight;
 	private int xScale, yScale;

@@ -125,7 +125,7 @@ public class SimulatorView extends JFrame {
 		diagram.add(histogram, BorderLayout.CENTER);
 		
 		// textArea panel
-		JTextArea textArea = new JTextArea(20, 20);
+		JTextArea textArea = new JTextArea(10, 20);
 		historyView.setTextArea(textArea);		
 		// scroll panel voor de textArea
 		JScrollPane scrollPane = new JScrollPane(textArea);
